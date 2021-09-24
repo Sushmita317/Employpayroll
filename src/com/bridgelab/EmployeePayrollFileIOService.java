@@ -1,5 +1,4 @@
 package com.bridgelab;
-package com.bridgelabs;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,6 +43,17 @@ public class EmployeePayrollFileIOService {
         return entries;
     }
 
+
+    public void printDataFromFile() {
+        try {
+            Files.lines(new File(PAYROLL_FILE_NAME).toPath()).forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
+
+
 
 
